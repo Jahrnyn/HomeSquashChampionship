@@ -13,6 +13,6 @@ class HomeController extends Controller
 
     // Loading registration page
     public function registerpage() {
-        return view('register');
+        return view('registration');
     }
 }

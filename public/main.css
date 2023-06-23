@@ -21,9 +21,24 @@ body {
     color: #fff;
 }
 
+/* Header 'logo' */
 .logo h1 {
     margin: 0;
+
 }
+
+.header .logo a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  .header .logo a:hover {
+    color: #ff6600;
+    background-color: transparent;
+  }
 
 .links {
     display: flex;
@@ -99,23 +114,18 @@ a:hover {
 
 /* Homepage results additional styling */
 .results-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 1px;
-    margin-bottom: 40px;
+    max-width: 400px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.3),
+      0 8px 16px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
 }
 
 .results-container > article {
     margin-bottom: 40px;
-}
-
-.month-container {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 5px;
 }
 
 .month-container:last-child {
@@ -212,9 +222,11 @@ a:hover {
   }
   
   .form-group input {
+    width: 100%;
     padding: 8px;
     border-radius: 5px;
     border: none;
+    box-sizing: border-box; 
   }
   
   button[type="submit"] {
