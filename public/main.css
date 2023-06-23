@@ -1,0 +1,149 @@
+/* Reset default browser styles */
+html, body, h1, input, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Set a dark-grey background */
+body {
+    background-color: #222;
+    color: #fff;
+}
+
+/* Header styles */
+.header {
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.login-form form {
+    display: flex;
+    align-items: center;
+}
+
+.register-link {
+    margin-left: 10px;
+}
+
+/* Countdown styles */
+.countdown {
+    background-color: #444;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust the height as needed */
+}
+
+
+/* Results styles */
+.results {
+    padding: 20px;
+    /* Add styling for previous match results here */
+}
+
+/* Customize links and buttons */
+a {
+    color: #ff6600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff8533;
+}
+
+.header a, .header button {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header a:hover, .header button:hover {
+    background-color: #ff8533;
+}
+
+/* homapage results aditional styling */
+.results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.results {
+    max-width: 600px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.results h1 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.results article {
+    margin-bottom: 20px;
+}
+
+.results h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.results a {
+    color: #ff6600;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.results a:hover {
+    color: #ff8533;
+}
+
+.results p {
+    margin: 0;
+    text-align: left;
+}
+
+.results b {
+    font-weight: bold;
+}
