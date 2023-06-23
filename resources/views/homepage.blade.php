@@ -28,7 +28,7 @@
     
     {{-- Countdown --}}
     <section class="countdown">
-        <h2>Coundown will be here</h2>
+        <h2>Countdown will be here</h2>
     </section>
 
     {{-- the results --}}
@@ -37,7 +37,9 @@
     <article>
         <h2><a href="/monthlyResults/jun2023">Június</a></h2>
         <div class="month-content">
-        Állás = <b>FLINKI</b> = 3,5-1,5 <br>
+        <div class="final-result">
+            Állás = <b>FLINKI</b> = 3,5-1,5 <br>
+        </div>
         <br>
         <p>
             06.02. Péntek 17:00 3-as EGÁL 5-5 <br>
@@ -53,41 +55,41 @@
     <article>
         <h2><a href="/monthlyResults/may2023">Május</a></h2>
         <div class="month-content">
-        <p>
+        <div class="final-result">
             Eredmény = <b>DÖNTETLEN</b> = 1,5-1,5 <br>
-        </p>
+        </div>
         </div>
     </article>
     <article>
         <h2><a href="/monthlyResults/apr2023">Április</a></h2>
         <div class="month-content">
-        <p>
+        <div class="final-result">
             Eredmény = <b>FLINKI</b> = 3,5-2,5 <br>
-        </p>
+        </div>
         </div>
     </article>
     <article>
         <h2><a href="/monthlyResults/mar2023">Március</a></h2>
         <div class="month-content">
-        <p>
+        <div class="final-result">
             Eredmény = <b>FLINKI</b> = 4-2 <br>
-        </p>
+        </div>
         </div>
     </article>
     <article>
         <h2><a href="/monthlyResults/feb2023">Február</a></h2>
         <div class="month-content">
-        <p>
+        <div class="final-result">
             Eredmény = <b>DÖNTETLEN</b> = 4-4 <br>
-        </p>
+        </div>
         </div>
     </article>
     <article>
         <h2><a href="/monthlyResults/jan2023">Január</a></h2>
         <div class="month-content">
-        <p>
+        <div class="final-result">
             Eredmény = <b>FLINKI</b> = 7,5-3,5 <br>
-        </p>
+        </div>
         </div>
     </article>
     </div>

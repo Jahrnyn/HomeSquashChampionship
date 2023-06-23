@@ -63,7 +63,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px; /* Adjust the height as needed */
+    height: 70px; 
 }
 
 
@@ -103,7 +103,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 1px;
     margin-bottom: 40px;
 }
 
@@ -159,7 +159,7 @@ a:hover {
 }
 
 .results p {
-    margin: 0;
+    margin-top: 5px;
     text-align: left;
     color: #fff;
 }
@@ -167,3 +167,18 @@ a:hover {
 .results b {
     font-weight: bold;
 }
+
+.final-result {
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    box-shadow:
+        0 2px 2px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1),
+        0 8px 8px rgba(0, 0, 0, 0.1),
+        0 16px 16px rgba(0, 0, 0, 0.1),
+        0 32px 32px rgba(0, 0, 0, 0.1),
+        0 64px 64px rgba(0, 0, 0, 0.1)
+    ;
+}
+
