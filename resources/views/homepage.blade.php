@@ -36,6 +36,7 @@
     <div class="results">
     <article>
         <h2><a href="/monthlyResults/jun2023">Június</a></h2>
+        <div class="month-content">
         Állás = <b>FLINKI</b> = 3,5-1,5 <br>
         <br>
         <p>
@@ -47,36 +48,47 @@
             06.22. Csütörtök 17:00 3-as ZOLI 6-4 <br>
             06.26. Hétfő 17:00 1-es 
         </p>
+        </div>
     </article>
     <article>
         <h2><a href="/monthlyResults/may2023">Május</a></h2>
+        <div class="month-content">
         <p>
             Eredmény = <b>DÖNTETLEN</b> = 1,5-1,5 <br>
         </p>
+        </div>
     </article>
     <article>
         <h2><a href="/monthlyResults/apr2023">Április</a></h2>
+        <div class="month-content">
         <p>
             Eredmény = <b>FLINKI</b> = 3,5-2,5 <br>
         </p>
+        </div>
     </article>
     <article>
         <h2><a href="/monthlyResults/mar2023">Március</a></h2>
+        <div class="month-content">
         <p>
             Eredmény = <b>FLINKI</b> = 4-2 <br>
         </p>
+        </div>
     </article>
     <article>
         <h2><a href="/monthlyResults/feb2023">Február</a></h2>
+        <div class="month-content">
         <p>
             Eredmény = <b>DÖNTETLEN</b> = 4-4 <br>
         </p>
+        </div>
     </article>
     <article>
         <h2><a href="/monthlyResults/jan2023">Január</a></h2>
+        <div class="month-content">
         <p>
             Eredmény = <b>FLINKI</b> = 7,5-3,5 <br>
         </p>
+        </div>
     </article>
     </div>
     </section>
@@ -84,4 +96,3 @@
     <script src="/main.js"></script>
 </body>
 </html>
-
