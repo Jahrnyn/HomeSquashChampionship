@@ -16,4 +16,4 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, "homepage"]);
 
-Route::get('/', [HomeController::class, "registerpage"]);
+Route::get('/register', [HomeController::class, "registerpage"]);
