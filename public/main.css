@@ -123,6 +123,10 @@ a:hover {
     margin: 20px auto;
 }
 
+.results-container h2 {
+    text-align: center;
+}
+
 .results-container > article {
     margin-bottom: 40px;
 }
