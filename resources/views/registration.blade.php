@@ -1,7 +1,10 @@
 <x-layout>
     <div class="registration-container">
         <h2>Registration</h2>
-        <form>
+        <form action="register" method="POST" id="registration-form">
+
+            @csrf 
+            
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>

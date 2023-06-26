@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -17,3 +18,6 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, "homepage"]);
 
 Route::get('/register', [HomeController::class, "registerpage"]);
+
+// for registration form
+Route::post('/register', [UserController::class, 'register']);
