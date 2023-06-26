@@ -34,8 +34,8 @@
         </h2>
     </section>
 
-    {{-- There goes the unice content linked to the rout --}}
-    {{$slot}}
+        {{-- There goes the unice content linked to the rout --}}
+        {{$slot}}
 
     {{-- footer --}}
     <footer>
