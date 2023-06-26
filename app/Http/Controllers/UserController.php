@@ -23,4 +23,18 @@ class UserController extends Controller
         User::create($incomingFields);
         return 'Hello from register function';
     }
+
+    public function login(Request $request) {
+        $incomingFields = $request->validate([
+            'loginemail' => 'required',
+            'loginpassword' => 'required'
+        ]);
+
+        if (auth()->attempt(['email' => $incomingFields['loginemail'], 'password' => $incomingFields['loginpassword']])) {
+            $request->session()->regenerate();
+            return 'Congrats!!!';
+        } else {
+            return "Fail";
+        }
+    }
 }

@@ -1,28 +1,17 @@
-/* ---------- Reset default browser styles ----------  */
+/* Reset default browser styles */
 html, body, h1, h2, input, button {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
 
-/* ----------  Set a dark-grey background ----------  */
+/* Set a dark-grey background */
 body {
     background-color: #222;
     color: #fff;
 }
 
-/* ---------- General link styles ---------- */
-a {
-    color: #ff6600;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #ff8533;
-}
-
-/* ---------- Header styles ----------  */
+/* Header styles */
 .header {
     background-color: #333;
     padding: 20px;
@@ -32,21 +21,24 @@ a:hover {
     color: #fff;
 }
 
-/* Header logo */
+/* Header 'logo' */
 .logo h1 {
     margin: 0;
+
 }
 
-.logo a {
+.header .logo a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease;
     background-color: transparent;
     padding: 0;
-}
-
-.logo a:hover {
+  }
+  
+  .header .logo a:hover {
     color: #ff6600;
-}
+    background-color: transparent;
+  }
 
 .links {
     display: flex;
@@ -59,7 +51,6 @@ a:hover {
     margin-left: 10px;
 }
 
-/* ----- Header Guest ----- */
 .login-form {
     display: flex;
     align-items: center;
@@ -67,8 +58,8 @@ a:hover {
 
 .login-form input[type="email"],
 .login-form input[type="password"] {
-    padding: 6px;
-    margin: 5px;
+    padding: 8px;
+    margin-right: 10px;
 }
 
 .login-form form {
@@ -76,84 +67,101 @@ a:hover {
     align-items: center;
 }
 
-/* ----- Header log-in ----- */
+.register-link {
+    margin-left: 10px;
+}
+
+/* Header log-in */
 .user-profile {
     display: flex;
     align-items: center;
 }
-
-.user-profile .username {
+  
+  .user-profile .username {
     color: #fff;
     margin-right: 10px;
 }
-
-/* Avatar */
-.user-profile .profile-picture {
+  /* Avatar */
+  .user-profile .profile-picture {
     width: 30px;
     height: 30px;
     background-color: #fff;
 }
-
-/* User buttons */
-.user-profile .button-container {
+  
+  .user-profile .button-container {
     display: flex; 
     align-items: center; 
     margin-left: 10px;
 }
-
-/* ---------- Header Link styles ---------- */
-.button-link {
+  
+  .user-profile .button-container button {
     background-color: #ff6600;
     color: #fff;
     padding: 8px 16px;
-    margin: 5px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border-radius: 6px;
+    margin-left: 10px;
 }
-.button-link:hover {
-    background-color: #ff8533;
+  
+  .user-profile .button-container .logout-button {
+    background-color: gray;
 }
+  
 
-.logout-button {
-    background-color: grey;
-    color: #fff;
-    padding: 8px 16px;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 6px;
-}
-.logout-button:hover {
-    background-color: #ff6600;
-}
-
-/* ---------- Countdown styles ---------- */
+/* Countdown styles */
 .countdown {
     background-color: #444;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70px;
+    height: 70px; 
 }
 
-/* ---------- Footer ---------- */
+/* Footer */
 footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
 }
-
+  
 footer p {
     margin: 0;
     font-size: 14px;
 }
 
-/* ---------- Homepage results additional styling ---------- */
+/* Results styles */
+.results {
+    padding: 20px;
+}
+
+/* Customize links and buttons */
+a {
+    color: #ff6600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff8533;
+}
+
+.header a, .header button {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header a:hover, .header button:hover {
+    background-color: #ff8533;
+}
+
+/* Homepage results additional styling */
 .results-container {
     max-width: 400px;
     background-color: #333;
@@ -237,7 +245,7 @@ footer p {
     ;
 }
 
-/* ---------- Registration form ---------- */
+/* Registration form */
 .registration-container {
     max-width: 400px;
     background-color: #333;
@@ -287,3 +295,5 @@ footer p {
   button[type="submit"]:hover {
     background-color: #ff8533;
   }
+  
+

@@ -29,7 +29,6 @@
             <div class="form-group">
                 <label for="confirm-password">Confirm Password:</label>
                 <input type="password" id="confirm-password" name="password_confirmation" required>
-
                 @error('password_confirmation')
                 <p>{{$message}}</p>
                 @enderror
