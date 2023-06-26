@@ -33,7 +33,7 @@
                 <p>{{$message}}</p>
                 @enderror
             </div>
-            <button type="submit">Register</button>
+            <button class="button-link" type="submit">Register</button>
         </form>
     </div>
     <script src="/main.js"></script>
