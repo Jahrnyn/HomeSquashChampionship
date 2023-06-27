@@ -10,15 +10,16 @@
 
 <body>
     {{-- Header --}}
+    <div class="header-container">
     <header class="header">
         <div class="logo">
             <h1><a href="/">Squash Results</a></h1>
         </div>
-
+            
 @auth
         {{-- Logged in Header --}}
         <div class="user-profile">
-            <span class="username">John Doe</span>
+            <a href="/profile" class="username"><strong>{{auth()->user()->username}}</strong></a>
             <span class="profile-picture"></span>
             <div class="button-container">
             <button class="button-link">New Month</button>
@@ -30,6 +31,7 @@
             </div>
         </div>
         </header>
+        </div>
 @else
         {{-- Logged out Header --}}
         <div class="login-form">
@@ -46,6 +48,7 @@
             </div>
         </div>
     </header>
+    </div>
 @endauth
     
     {{-- Countdown --}}
