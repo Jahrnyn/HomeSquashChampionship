@@ -1,5 +1,10 @@
 /* ---------- Reset default browser styles ----------  */
-html, body, h1, h2, input, button {
+html,
+body,
+h1,
+h2,
+input,
+button {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -96,8 +101,8 @@ a:hover {
 
 /* User buttons */
 .user-profile .button-container {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     margin-left: 10px;
 }
 
@@ -112,6 +117,7 @@ a:hover {
     transition: background-color 0.3s ease;
     border-radius: 6px;
 }
+
 .button-link:hover {
     background-color: #ff8533;
 }
@@ -126,6 +132,7 @@ a:hover {
     transition: background-color 0.3s ease;
     border-radius: 6px;
 }
+
 .logout-button:hover {
     background-color: #ff6600;
 }
@@ -154,24 +161,6 @@ footer p {
 }
 
 /* ---------- Homepage results additional styling ---------- */
-.results-container {
-    max-width: 400px;
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow:
-      0 2px 4px rgba(0, 0, 0, 0.3),
-      0 8px 16px rgba(0, 0, 0, 0.3);
-    margin: 20px auto;
-}
-
-.results-container h2 {
-    text-align: center;
-}
-
-.results-container > article {
-    margin-bottom: 40px;
-}
 
 .month-container:last-child {
     margin-bottom: 0;
@@ -225,16 +214,9 @@ footer p {
 
 .final-result {
     border-radius: 10px;
-    margin: 5px;
+    margin: 10px;
     padding: 5px;
-    box-shadow:
-        0 2px 2px rgba(0, 0, 0, 0.1),
-        0 4px 4px rgba(0, 0, 0, 0.1),
-        0 8px 8px rgba(0, 0, 0, 0.1),
-        0 16px 16px rgba(0, 0, 0, 0.1),
-        0 32px 32px rgba(0, 0, 0, 0.1),
-        0 64px 64px rgba(0, 0, 0, 0.1)
-    ;
+    text-align: center;
 }
 
 /* ---------- Registration form ---------- */
@@ -244,33 +226,83 @@ footer p {
     padding: 20px;
     border-radius: 10px;
     box-shadow:
-      0 2px 4px rgba(0, 0, 0, 0.3),
-      0 8px 16px rgba(0, 0, 0, 0.3);
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 8px 16px rgba(0, 0, 0, 0.3);
     margin: 20px auto;
-  }
-  
-  .registration-container h2 {
+}
+
+.registration-container h2 {
     color: #fff;
     font-size: 24px;
     text-align: center;
     margin-bottom: 20px;
-  }
-  
-  .form-group {
+}
+
+.form-group {
     margin-bottom: 15px;
-  }
-  
-  .form-group label {
+}
+
+.form-group label {
     color: #fff;
     display: block;
     margin-bottom: 5px;
-  }
-  
-  .form-group input {
+}
+
+.form-group input {
     width: 100%;
     padding: 8px;
     border-radius: 5px;
     border: none;
-    box-sizing: border-box; 
-  }
-  
+    box-sizing: border-box;
+}
+
+/* Main container structure */
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.left-container,
+.right-container,
+.results-container {
+    flex: 1;
+    background-color: #333;
+    padding: 20px;
+    margin: 20px 10px;
+    border-radius: 10px;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 8px 16px rgba(0, 0, 0, 0.3);
+
+}
+
+/* Center container */
+.results-container {
+    flex: 5;
+    width: 50%;
+}
+
+.results-container h2 {
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    box-shadow:
+        0 2px 2px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1),
+        0 8px 8px rgba(0, 0, 0, 0.1),
+        0 16px 16px rgba(0, 0, 0, 0.1),
+        0 32px 32px rgba(0, 0, 0, 0.1),
+        0 64px 64px rgba(0, 0, 0, 0.1);
+}
+
+.results-container>article {
+    margin-bottom: 40px;
+}
+
+/* Left and Right container */
+.left-container,
+.right-container {
+  flex: 2;
+  width: 25%;
+}

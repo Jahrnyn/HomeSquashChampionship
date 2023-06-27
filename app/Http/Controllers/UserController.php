@@ -10,11 +10,7 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
 
-    public function logout() {
-        auth()->logout();
-        return redirect('/');
-    }
-
+    // Homepage
     public function showCorrectHomepage() {
         if (auth()->check()) {
             return view('homepage-feed');
@@ -23,6 +19,7 @@ class UserController extends Controller
         };
     }
     
+    // Registration
     public function register(Request $request) {
         $incomingFields = $request->validate([
             'username' => ['required', 'min:4', 'max:20', Rule::unique('users', 'username')],
@@ -37,6 +34,7 @@ class UserController extends Controller
         return 'Hello from register function';
     }
 
+    // Log in
     public function login(Request $request) {
         $incomingFields = $request->validate([
             'loginemail' => 'required',
@@ -45,9 +43,15 @@ class UserController extends Controller
 
         if (auth()->attempt(['email' => $incomingFields['loginemail'], 'password' => $incomingFields['loginpassword']])) {
             $request->session()->regenerate();
-            return redirect('/');
+            return redirect('/')->with('succes', 'You have successfully logged in');
         } else {
             return "Fail";
         }
+    }
+
+    // Log Out
+    public function logout() {
+        auth()->logout();
+        return redirect('/')->with('sucess', 'You are succesfully logged out');
     }
 }
