@@ -10,6 +10,11 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
 
+    public function logout() {
+        auth()->logout();
+        return redirect('/');
+    }
+
     public function showCorrectHomepage() {
         if (auth()->check()) {
             return view('homepage-feed');
@@ -40,7 +45,7 @@ class UserController extends Controller
 
         if (auth()->attempt(['email' => $incomingFields['loginemail'], 'password' => $incomingFields['loginpassword']])) {
             $request->session()->regenerate();
-            return 'Congrats!!!';
+            return redirect('/');
         } else {
             return "Fail";
         }

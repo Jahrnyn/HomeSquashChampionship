@@ -18,9 +18,9 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [UserController::class, "showCorrectHomepage"]);
 
 Route::get('/register', [HomeController::class, "registerpage"]);
-
 // for registration form
 Route::post('/register', [UserController::class, 'register']);
 
 Route::post('/login', [UserController::class, 'login']);
+Route::post('/logout', [UserController::class, 'logout']);
 
