@@ -58,6 +58,17 @@
         </h2>
     </section>
 
+    {{-- Toast Notification for redirect --}}
+    @if (session()->has('success'))
+        <div class="toast-container">
+            <div class="toast">
+                <span class="toast-icon">&#x2714;</span>
+                <span class="toast-message">{{session('success')}}</span>
+                <button class="toast-close">&times;</button>
+              </div>
+        </div>
+    @endif
+
     {{-- There goes the unice content linked to the rout --}}
     {{$slot}}
 
@@ -65,3 +76,4 @@
     <footer>
         <p>&copy; 2023 Squash Results. All rights reserved.</p>
     </footer>
+    <script src="/main.js"></script>

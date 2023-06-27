@@ -36,7 +36,6 @@
             <button class="button-link" type="submit">Register</button>
         </form>
     </div>
-    <script src="/main.js"></script>
 </body>
 </html>
 </x-layout>

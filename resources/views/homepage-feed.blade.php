@@ -12,7 +12,6 @@
             <p>some content will go here.</p>
         </div>
     </div>
-    <script src="/main.js"></script>
 </body>
 </html>
 </x-layout>

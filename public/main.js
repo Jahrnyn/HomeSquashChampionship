@@ -3,7 +3,7 @@
 var countDownDate = new Date("Jul 15, 2023 15:37:25").getTime();
 
 // Update the count down every 1 second
-var x = setInterval(function() {
+var x = setInterval(function () {
 
   // Get today's date and time
   var now = new Date().getTime();
@@ -19,7 +19,7 @@ var x = setInterval(function() {
 
   // Display the result in the element with id="demo"
   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+    + minutes + "m " + seconds + "s ";
 
   // If the count down is finished, write some text
   if (distance < 0) {
@@ -27,3 +27,26 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+/* Toast notifications disappers */
+var toastContainer = document.querySelector('.toast-container');
+var closeButton = document.querySelector('.toast-close');
+
+// by clicking
+if (toastContainer) {
+  closeButton.addEventListener('click', closeToast);
+
+  function closeToast() {
+    toastContainer.remove();
+  }
+}
+
+// by timing
+if (toastContainer) {
+  var duration = 3000;
+  setTimeout(function() {
+    toastContainer.remove();
+  }, duration);
+}
+
+

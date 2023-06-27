@@ -43,7 +43,7 @@ class UserController extends Controller
 
         if (auth()->attempt(['email' => $incomingFields['loginemail'], 'password' => $incomingFields['loginpassword']])) {
             $request->session()->regenerate();
-            return redirect('/')->with('succes', 'You have successfully logged in');
+            return redirect('/')->with('success', 'You have successfully logged in');
         } else {
             return "Fail";
         }
@@ -52,6 +52,6 @@ class UserController extends Controller
     // Log Out
     public function logout() {
         auth()->logout();
-        return redirect('/')->with('sucess', 'You are succesfully logged out');
+        return redirect('/')->with('success', 'You are succesfully logged out');
     }
 }
