@@ -16,6 +16,7 @@
         </div>
 
 @auth
+        {{-- Logged in Header --}}
         <div class="user-profile">
             <span class="username">John Doe</span>
             <span class="profile-picture"></span>
@@ -30,6 +31,7 @@
         </div>
         </header>
 @else
+        {{-- Logged out Header --}}
         <div class="login-form">
             <form action="/login" method="POST">
                 @csrf
