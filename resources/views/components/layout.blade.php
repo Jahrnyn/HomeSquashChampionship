@@ -52,12 +52,20 @@
 @endauth
     
     {{-- Countdown --}}
-    <section class="countdown">
-        <h2>
-            <p id="demo"></p>
-        </h2>
-    </section>
+    <div class="countdown-container">       
+        <div class="header-background">
+            <img src="/squash.gif" alt="" class="background-gif">
+        </div>
+        <div class="bg-filter"></div>
+        <div class="countdown">
+            <h2> <p id="demo"></p> </h2>
+        </div>
+    </div>
 
+    
+    {{-- There goes the unice content linked to the rout --}}
+    {{$slot}}
+    
     {{-- Toast Notification for redirect --}}
     @if (session()->has('success'))
         <div class="toast-container">
@@ -77,9 +85,6 @@
             </div>
         </div>
     @endif
-
-    {{-- There goes the unice content linked to the rout --}}
-    {{$slot}}
 
     {{-- footer --}}
     <footer>
