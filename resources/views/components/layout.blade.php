@@ -83,6 +83,6 @@
 
     {{-- footer --}}
     <footer>
-        <p>&copy; 2023 Squash Results. All rights reserved.</p>
+        <p>&copy; {{date('Y')}} Squash Results. All rights reserved.</p>
     </footer>
     <script src="/main.js"></script>

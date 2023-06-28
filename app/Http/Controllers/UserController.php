@@ -20,7 +20,7 @@ class UserController extends Controller
     }
     
     // Registration
-    public function register(Request $request) {
+public function registration(Request $request) {
         $incomingFields = $request->validate([
             'username' => ['required', 'min:4', 'max:20', Rule::unique('users', 'username')],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
@@ -30,8 +30,8 @@ class UserController extends Controller
         // Hashing psw
         $incomingFields['password'] = bcrypt($incomingFields['password']);
 
-        User::create($incomingFields);
-        
+        $user = User::create($incomingFields);
+        auth()->login($user); // auto login user after registration than redirect.
         return redirect('/')->with('success', 'Account has been created!');
     }
 
