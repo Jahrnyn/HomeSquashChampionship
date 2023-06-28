@@ -31,7 +31,8 @@ class UserController extends Controller
         $incomingFields['password'] = bcrypt($incomingFields['password']);
 
         User::create($incomingFields);
-        return 'Hello from register function';
+        
+        return redirect('/')->with('success', 'Account has been created!');
     }
 
     // Log in
@@ -45,7 +46,7 @@ class UserController extends Controller
             $request->session()->regenerate();
             return redirect('/')->with('success', 'You have successfully logged in');
         } else {
-            return "Fail";
+            return redirect('/')->with('failure', 'Invalid login');
         }
     }
 
