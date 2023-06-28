@@ -36,6 +36,7 @@ a:hover {
 .header-container {
     position: sticky;
     top: 0;
+    z-index: 3;
 }
 
 .header {
