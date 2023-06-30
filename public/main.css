@@ -10,8 +10,14 @@ button {
     font-family: Arial, sans-serif;
 }
 
-/* ----------  Set a dark-grey background ----------  */
+html,body {
+    height: 100%;
+    width: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column; 
     background-color: #222;
     color: #fff;
 }
@@ -28,15 +34,9 @@ a:hover {
 }
 
 /* ---------- Header styles ----------  */
-.sticky-header {
-    position: sticky;
-    top: 0;
-}
 
 .header-container {
-    position: sticky;
     top: 0;
-    z-index: 3;
 }
 
 .header {
@@ -148,17 +148,49 @@ a:hover {
     background-color: #ff6600;
 }
 
+
+.main-content-container {
+    flex: 1 0 auto;
+}
 /* ---------- Footer ---------- */
+.footer-container{
+    flex-shrink: 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
 footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
-    text-align: center;
+    text-align: center;    
 }
 
 footer p {
     margin: 0;
     font-size: 14px;
+}
+
+/* ----------  Wellcome page ----------  */
+
+.wellcome-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.wellcome-container i {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.wellcome-container h1 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+.wellcome-container p {
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
 /* ---------- Homepage results additional styling ---------- */

@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MatchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,12 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [UserController::class, "showCorrectHomepage"]);
 
+// User related routes:
 Route::get('/register', [HomeController::class, "registerpage"]);
-// for registration form
-Route::post('/register', [UserController::class, 'registration']);
-
+Route::post('/register', [UserController::class, 'registration']); // for registration form
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout']);
+
+// Matches related routes: 
+Route::get('/create-month', [MatchController::class, 'showCreateForm']);
 
