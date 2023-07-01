@@ -14,7 +14,10 @@
         <div class="header-container">
         <header class="header">
             <div class="logo">
-            <h1><a href="/">Squash Results</a></h1>
+                <a href="/" >
+                    <img src="squash-logo2-cutted_resized.png" alt="Home">
+                    <h1> Squash Results</h1>
+                </a> 
             </div>
 
         @auth
