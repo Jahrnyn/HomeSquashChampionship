@@ -36,6 +36,4 @@
             <button class="button-link" type="submit">Register</button>
         </form>
     </div>
-</body>
-</html>
 </x-layout>

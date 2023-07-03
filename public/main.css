@@ -10,14 +10,7 @@ button {
     font-family: Arial, sans-serif;
 }
 
-html,body {
-    height: 100%;
-    width: 100%;
-}
-
 body {
-    display: flex;
-    flex-direction: column; 
     background-color: #222;
     color: #fff;
 }
@@ -33,6 +26,70 @@ a:hover {
     color: #ff8533;
 }
 
+
+/* --------------------------------------------------------------------------------------------------- */
+/* ---------- Layout grid ---------- */
+.page-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto ;
+    height: 100vh;
+}
+
+/* --------------------------------------------------------------------------------------------------- */
+/* ----------  Main container structure ----------  */
+.content-container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    max-width: 100vw;
+}
+
+.left-container,
+.right-container,
+.center-container {
+    flex: 1;
+    background-color: #333;
+    padding: 20px;
+    margin: 20px 10px;
+    border-radius: 10px;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 8px 16px rgba(0, 0, 0, 0.3);
+
+}
+
+/* Center container */
+.center-container {
+    flex: 5;
+    width: 50%;
+}
+/* Left and Right container */
+.left-container,
+.right-container {
+  flex: 2;
+  width: 25%;
+}
+
+.center-container h2 {
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    box-shadow:
+        0 2px 2px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1),
+        0 8px 8px rgba(0, 0, 0, 0.1),
+        0 16px 16px rgba(0, 0, 0, 0.1),
+        0 32px 32px rgba(0, 0, 0, 0.1),
+        0 64px 64px rgba(0, 0, 0, 0.1);
+}
+
+.center-container>article {
+    margin-bottom: 40px;
+}
+
+
+/* --------------------------------------------------------------------------------------------------- */
 /* ---------- Header styles ----------  */
 
 .header-container {
@@ -160,13 +217,57 @@ a:hover {
     background-color: #ff6600;
 }
 
+/* --------------------------------------------------------------------------------------------------- */
+/* ---------- Countdown styles ---------- */
+.countdown-container {
+    position: relative;
+    width: 100%;
+    height: 20vh; 
+    overflow: hidden;
+  }
 
-.main-content-container {
-    flex: 1 0 auto;
+  /* Playing wiht gif in the countdown section */
+  .header-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .background-gif {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+.bg-filter {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    min-height: 1px;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    z-index: 1;
+    opacity: 0.80;
+    overflow: hidden;
 }
+
+.countdown {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+/* --------------------------------------------------------------------------------------------------- */
 /* ---------- Footer ---------- */
 .footer-container{
-    flex-shrink: 0;
     position: relative;
     bottom: 0;
     left: 0;
@@ -184,27 +285,29 @@ footer p {
     font-size: 14px;
 }
 
+/* --------------------------------------------------------------------------------------------------- */
 /* ----------  Wellcome page ----------  */
 
-.wellcome-container {
+#wellcome-container {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
 }
-.wellcome-container i {
+#wellcome-container i {
     font-style: italic;
     margin-bottom: 10px;
 }
-.wellcome-container h1 {
+#wellcome-container h1 {
     font-size: 24px;
     margin: 20px 0;
 }
-.wellcome-container p {
+#wellcome-container p {
     margin-bottom: 10px;
     line-height: 1.5;
 }
 
+/* --------------------------------------------------------------------------------------------------- */
 /* ---------- Homepage results additional styling ---------- */
 
 .month-container:last-child {
@@ -264,6 +367,7 @@ footer p {
     text-align: center;
 }
 
+/* --------------------------------------------------------------------------------------------------- */
 /* ---------- Registration form ---------- */
 .registration-container {
     max-width: 400px;
@@ -301,66 +405,16 @@ footer p {
     box-sizing: border-box;
 }
 
-/* ----------  Main container structure ----------  */
-.container {
-    display: flex;
-    justify-content: center;
-}
-
-.left-container,
-.right-container,
-.results-container {
-    flex: 1;
-    background-color: #333;
-    padding: 20px;
-    margin: 20px 10px;
-    border-radius: 10px;
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.3),
-        0 8px 16px rgba(0, 0, 0, 0.3);
-
-}
-
-/* Center container */
-.results-container {
-    flex: 5;
-    width: 50%;
-}
-
-.results-container h2 {
-    text-align: center;
-    border-radius: 10px;
-    margin: 5px;
-    padding: 5px;
-    box-shadow:
-        0 2px 2px rgba(0, 0, 0, 0.1),
-        0 4px 4px rgba(0, 0, 0, 0.1),
-        0 8px 8px rgba(0, 0, 0, 0.1),
-        0 16px 16px rgba(0, 0, 0, 0.1),
-        0 32px 32px rgba(0, 0, 0, 0.1),
-        0 64px 64px rgba(0, 0, 0, 0.1);
-}
-
-.results-container>article {
-    margin-bottom: 40px;
-}
-
-/* Left and Right container */
-.left-container,
-.right-container {
-  flex: 2;
-  width: 25%;
-}
-
+/* --------------------------------------------------------------------------------------------------- */
 /* ---------- Toast notifications ----------  */
 .toast-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 9999;
-  }
+}
   
-  .toast {
+.toast {
     display: flex;
     align-items: center;
     background-color: #ff6600;
@@ -368,70 +422,109 @@ footer p {
     padding: 10px 15px;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
+}
   
-  .toast-icon {
+.toast-icon {
     font-size: 18px;
     margin-right: 10px;
-  }
+}
   
-  .toast-message {
+.toast-message {
     flex: 1;
-  }
+}
   
-  .toast-close {
+.toast-close {
     border: none;
     background-color: transparent;
     color: #fff;
     font-size: 20px;
     cursor: pointer;
     margin-left: 10px;
-  }
-
-/* ---------- Countdown styles ---------- */
-.countdown-container {
-    position: relative;
-    width: 100%;
-    height: 20vh; /* Adjust the height as needed */
-    overflow: hidden;
-  }
-
-  /* Playing wiht gif in the countdown section */
-  .header-background {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-  }
-  
-  .background-gif {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-.bg-filter {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    min-height: 1px;
-    height: 100%;
-    width: 100%;
-    background-color: #000000;
-    z-index: 1;
-    opacity: 0.80;
-    overflow: hidden;
 }
 
-.countdown {
+/* --------------------------------------------------------------------------------------------------- */
+/* ---------- Homepage slideshow ---------- */
+
+#slideshow {
+    flex: 1;
+    padding: 0%;
+    overflow: hidden;
+    height: 30vw;
+}
+
+.slideshow-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;  /* Hide the images by default */
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #ff6600;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
   }
-  
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.slideshow-text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+

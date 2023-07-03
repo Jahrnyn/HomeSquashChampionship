@@ -5,7 +5,7 @@
                 <h2>Hello <strong>{{auth()->user()->username}}</strong>!</h2>
             </div> 
         </div>
-        <div class="results-container">
+        <div class="center-container">
             <h2>Starting a new month in {{date("Y")}}</h2>
         </div>
         <div class="right-container">
