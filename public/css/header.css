@@ -1,0 +1,127 @@
+/* --------------------------------------------------------------------------------------------------- */
+/* ---------- Header styles ----------  */
+
+.header-container {
+    top: 0;
+}
+
+.header {
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+/* Header logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    vertical-align: middle;
+}
+
+.logo h1 {
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    display: inline;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+.logo a:hover {
+    color: #ff6600;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+/* ----- Header Guest ----- */
+.login-form {
+    display: flex;
+    align-items: center;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    padding: 6px;
+    margin: 5px;
+}
+
+.login-form form {
+    display: flex;
+    align-items: center;
+}
+
+/* ----- Header log-in ----- */
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile .username {
+    color: #fff;
+    margin-right: 10px;
+}
+
+/* Avatar */
+.user-profile .profile-picture {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+}
+
+/* User buttons */
+.user-profile .button-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/* ---------- Header Link styles ---------- */
+.button-link {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 8px 16px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+}
+
+.button-link:hover {
+    background-color: #ff8533;
+}
+
+.logout-button {
+    background-color: grey;
+    color: #fff;
+    padding: 8px 16px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+}
+
+.logout-button:hover {
+    background-color: #ff6600;
+}

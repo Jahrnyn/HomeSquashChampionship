@@ -1,0 +1,59 @@
+/* --------------------------------------------------------------------------------------------------- */
+/* ---------- Homepage results additional styling ---------- */
+
+.month-container:last-child {
+    margin-bottom: 0;
+}
+
+.month-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.month-content {
+    text-align: left;
+    margin-bottom: 10%;
+
+}
+
+.results {
+    max-width: 600px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.results h1 {
+    color: #ff6600;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.results a {
+    color: #ff8533;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.results a:hover {
+    color: #ff6600;
+}
+
+.results p {
+    margin-top: 5px;
+    text-align: left;
+    color: #fff;
+}
+
+.results b {
+    font-weight: bold;
+}
+
+.final-result {
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+}

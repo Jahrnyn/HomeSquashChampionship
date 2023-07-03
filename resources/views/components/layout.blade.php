@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Squash Results</title>
   <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/toasts.css">
+  @yield('styles') {{-- placeholder to another stylesheets --}}
 </head>
 
 <body>
@@ -18,7 +22,9 @@
 
         {{-- There goes the unice content linked to the rout --}}
         <main>
-            {{$slot}}
+            <div class="main-content">
+                {{$slot}}
+            </div>
         </main>
 
         {{-- footer --}}
