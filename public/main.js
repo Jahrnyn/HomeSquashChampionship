@@ -68,7 +68,7 @@ function plusSlides(n) {
   clearInterval(slideTimer);
   slideTimer = setInterval(() => {
     plusSlides(1);
-  }, 3000);
+  }, 5000);
   showSlides(slideIndex += n);
 }
 
