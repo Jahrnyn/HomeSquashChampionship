@@ -13,8 +13,6 @@
                 <a href="/profile" class="username"><strong>{{auth()->user()->username}}</strong></a>
                 <span class="profile-picture"></span>
                 <div class="button-container">
-                    <a class="button-link" href="/create-month">New Month</a>
-                    <a class="button-link" href="/create-match">New Match</a>
                     <form action="/logout" method="POST" class="logout-form">
                     @csrf
                     <button type="submit" class="logout-button">Log out</button>
