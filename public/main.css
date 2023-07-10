@@ -12,7 +12,7 @@ body {
     color: #fff;
 }
 
-/* ---------- General link styles ---------- */
+/* ---------- Links ---------- */
 a {
     color: #ff6600;
     text-decoration: none;
@@ -21,6 +21,22 @@ a {
 
 a:hover {
     color: #ff8533;
+}
+
+/* ---------- Buttons ---------- */
+.button-link {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 8px 16px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+}
+
+.button-link:hover {
+    background-color: #ff8533;
 }
 
 /* --------------------------------------------------------------------------------------------------- */

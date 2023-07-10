@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -25,5 +26,5 @@ Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout']);
 
 // Matches related routes: 
-Route::get('/create-month', [MatchController::class, 'showCreateForm']);
+Route::post('/create-event', [EventController::class, 'storeNewEvent']);
 

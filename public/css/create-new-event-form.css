@@ -1,5 +1,9 @@
 /* --------------------------------------------------------------------------------------------------- */
 /* ---------- New Event Form ---------- */
+#new-event-form {
+    display: grid;
+}
+
 
 #new-event-form-container h2 {
     color: #fff;
@@ -26,4 +30,10 @@
 }
 .form-group > *:not(#more-opponent-check, #court) {
     width: 100%;
+}
+
+#create-button {
+    margin: auto;
+    width: 50%;
+    justify-content: center;
 }

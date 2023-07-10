@@ -1,6 +1,6 @@
 <div class="new-event-form-container">
     <h2>Create New Event</h2>
-    <form action="new-event" method="POST" id="new-event-form">
+    <form action="/create-event" method="POST" id="new-event-form">
     @csrf
         <div class="form-group">
             <label for="next-date">Select Date and Time</label>
@@ -25,6 +25,13 @@
             <input type="checkbox" id="more-opponent-check" name="more-opponent-check">
         </div>
         <div id="additional-inputs-container"></div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="Enter location here">
+        </div>
+        <div class="forom-group">
+            <button type="submit" class="button-link" id="create-button">Create</button>
+        </div>
 
     </form>
 </div>
