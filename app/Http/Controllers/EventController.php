@@ -4,24 +4,44 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
     // Post Event form to database
-    public function storeNewEvent(Request $request) {
+    public function storeNewEvent(Request $request)
+    {
         $incomingFields = $request->validate([
-            'date_time' => 'required',
-            'court' => 'required',
-            'player2' => 'required',
+            'next-date' => 'required',
+            'next-time' => 'required',
+            'court' => 'nullable',
+            'opponent' => 'nullable',
+/*             'player3' => 'nullable',
+            'player4' => 'nullable', */
+            'location' => 'nullable',
         ]);
 
-        $incomingFields['date_time'] = strip_tags($incomingFields['date_time']);
-        $incomingFields['curt'] = strip_tags($incomingFields['curt']);
-        $incomingFields['player1'] = auth()->id();
-        $incomingFields['player2'] = strip_tags($incomingFields['player2']);
-
-        Event::create($incomingFields);
+        // Check if the 'court' value is present
+        if (isset($incomingFields['court'])) {
+            $court = intval($incomingFields['court']); // Convert the 'court' value to an integer
+        } else {
+            $court = null; // Set the value to null if it's not present
+        }
         
-        return "HEY";
+        $incomingFields['player1'] = Auth::user()->name;
+
+        $event = new Event([
+            'date' => $incomingFields['next-date'],
+            'time' => $incomingFields['next-time'],
+            'court' => $court,
+            'opponent' => $incomingFields['opponent'],
+/*             'player3' => $incomingFields['player3'],
+            'player4' => $incomingFields['player4'], */
+            'location' => $incomingFields['location'],
+        ]);
+
+        Auth::user()->events()->save($event);
+
+        return "Sucess";
     }
 }
