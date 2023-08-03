@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/toasts.css">
   @yield('styles') {{-- placeholder to another stylesheets --}}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
