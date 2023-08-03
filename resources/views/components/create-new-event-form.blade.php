@@ -22,7 +22,8 @@
         </div>
         <div class="form-group">
             <label for="opponent">Select Opponent</label>
-            <input type="opponent" id="opponent" name="opponent" placeholder="Enter username here">
+            <input type="opponent" id="opponent" name="opponent" placeholder="Enter username here" list="opponent-suggestions">
+            <datalist id="opponent-suggestions"></datalist>
         </div>
 {{--        <div class="form-group">
             <label for="#">More participants?</label>

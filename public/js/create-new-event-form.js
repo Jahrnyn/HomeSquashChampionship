@@ -29,3 +29,32 @@ checkoxStatus.addEventListener('change', function () {
         console.log("test");
     }
 });
+
+
+//  handling the autocomplete functionality
+$(document).ready(function () {                 // for DOM  is fully loaded
+    $('#opponent').on('input', function () {    // event listener
+        var query = $(this).val();              // retrieves the current value of the opponent input field (user input)
+
+        if (query.length >= 3) {
+            $.ajax({                            // actual GET request
+                url: '/search-users',
+                type: 'GET',
+                data: { query: query },
+                dataType: 'json',
+                success: function (data) {                          // handles the JSON response received from the server (if AJAX request was successful)
+                    var suggestions = data.map(function (user) {    // maps over the array
+                        return '<option value="' + user + '">';     // creating option element
+                    }).join('');                                    // join() method is used to join all the option elements together into a single string.
+
+                    $('#opponent-suggestions').html(suggestions);   // updates the content of the datalist element
+                },
+                error: function (error) {                           // error handling
+                    console.log('Error: ' + error.responseText);
+                }
+            });
+        } else {
+            $('#opponent-suggestions').html('');
+        }
+    });
+});

@@ -55,4 +55,14 @@ public function registration(Request $request) {
         auth()->logout();
         return redirect('/')->with('success', 'You are succesfully logged out');
     }
+
+
+
+    // Searching for registered users
+    public function searchUsers(Request $request) {
+        $query = $request->input('query');
+        $users = User::where('username', 'like', '%' . $query . '%')->pluck('username');
+
+        return response()->json($users);
+    }
 }
