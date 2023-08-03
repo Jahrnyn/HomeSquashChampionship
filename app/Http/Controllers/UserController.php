@@ -38,11 +38,11 @@ public function registration(Request $request) {
     // Log in
     public function login(Request $request) {
         $incomingFields = $request->validate([
-            'loginemail' => 'required',
+            'username' => 'required',
             'loginpassword' => 'required'
         ]);
 
-        if (auth()->attempt(['email' => $incomingFields['loginemail'], 'password' => $incomingFields['loginpassword']])) {
+        if (auth()->attempt(['username' => $incomingFields['username'], 'password' => $incomingFields['loginpassword']])) {
             $request->session()->regenerate();
             return redirect('/')->with('success', 'You have successfully logged in');
         } else {

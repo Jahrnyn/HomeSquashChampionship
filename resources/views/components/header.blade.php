@@ -30,7 +30,7 @@
         <div class="login-form">
             <form action="/login" method="POST">
             @csrf
-                <input type="email" name="loginemail" placeholder="Email Address">
+                <input type="text" name="username" placeholder="Username">
                 <input type="password" name="loginpassword" placeholder="Password">
                 <button class="button-link" type="submit">Login</button>
             </form>

@@ -42,6 +42,6 @@ class EventController extends Controller
 
         Auth::user()->events()->save($event);
 
-        return "Sucess";
+        return redirect('/')->with('success', "New event has been created!");
     }
 }
