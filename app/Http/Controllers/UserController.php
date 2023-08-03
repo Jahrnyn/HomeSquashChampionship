@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Log;
 
 
 class UserController extends Controller
@@ -56,13 +57,26 @@ public function registration(Request $request) {
         return redirect('/')->with('success', 'You are succesfully logged out');
     }
 
-
+    // checking username exists or not
+    public function checkIfUserExists($username){
+        dd('Check if user exists:', $username);
+        $user = User::where('username', $username)->first();
+        return !is_null($user);
+    }
 
     // Searching for registered users
     public function searchUsers(Request $request) {
-        $query = $request->input('query');
-        $users = User::where('username', 'like', '%' . $query . '%')->pluck('username');
+        try {
+            $query = $request->input('query');
+            $users = User::where('username', 'like', '%' . $query . '%')->pluck('username');
 
-        return response()->json($users);
+            return response()->json($users);
+        } catch (\Exception $e) {
+            Log::error($e);
+
+            return response()->json(['error' => 'An error occurred while searching users.'], 500);
+        }
     }
+
+    
 }

@@ -1,9 +1,9 @@
 /* Create New Event */
-const checkoxStatus = document.getElementById('more-opponent-check');
+/* const checkboxStatus = document.getElementById('more-opponent-check');
 const additionalInputContainer = document.getElementById('additional-inputs-container');
 const parentContainer = document.getElementById('new-event-form');
 
-checkoxStatus.addEventListener('change', function () {
+checkboxStatus.addEventListener('change', function () {
     if (this.checked) {
         for (let i = 3; i < 5; i++) {
             const formGroup = document.createElement("div");
@@ -16,7 +16,7 @@ checkoxStatus.addEventListener('change', function () {
     
                 const input = document.createElement('input');
                 input.type = 'text';
-                input.name = 'Aditional Opponent ${i}';
+                input.name = 'Aditional Opponent ' + i;
                 input.placeholder = `Player ${i}`
     
                 formGroup.appendChild(label);
@@ -28,7 +28,7 @@ checkoxStatus.addEventListener('change', function () {
         additionalInputContainer.innerHTML = '';
         console.log("test");
     }
-});
+}); */
 
 
 //  handling the autocomplete functionality

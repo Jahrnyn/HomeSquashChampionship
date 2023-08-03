@@ -28,5 +28,5 @@ Route::post('/logout', [UserController::class, 'logout']);
 Route::post('/create-event', [EventController::class, 'storeNewEvent']);
 
 // autocomplete functionalitys
-Route::get('/search-users', 'UserController@searchUsers');
+Route::get('/search-users', [UserController::class, 'searchUsers']);
 

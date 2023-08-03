@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UserController;
 
 class EventController extends Controller
 {
@@ -15,11 +16,21 @@ class EventController extends Controller
             'next-date' => 'required',
             'next-time' => 'required',
             'court' => 'nullable',
-            'opponent' => 'nullable',
+            'opponent' => 'required|exists:users,username',
 /*             'player3' => 'nullable',
             'player4' => 'nullable', */
             'location' => 'nullable',
         ]);
+
+        //  checking if the opponent username exists in the database
+        $opponentUSername = $incomingFields['opponent'];
+        $userController = new UserController();
+
+        if (!$userController->checkIfUserExists($opponentUSername)) {
+            // User does not exist, add an error message to the session:
+            return redirect()->back()->with('error', 'Sorry, that user is not registered. Please select an existing user! ')->withInput();
+        }
+        
 
         // Check if the 'court' value is present
         if (isset($incomingFields['court'])) {
