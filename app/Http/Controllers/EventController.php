@@ -16,22 +16,10 @@ class EventController extends Controller
             'next-date' => 'required',
             'next-time' => 'required',
             'court' => 'nullable',
-            'opponent' => 'required|exists:users,username',
-/*             'player3' => 'nullable',
-            'player4' => 'nullable', */
+            'opponent' => 'nullable',
             'location' => 'nullable',
         ]);
-
-        //  checking if the opponent username exists in the database
-        $opponentUSername = $incomingFields['opponent'];
-        $userController = new UserController();
-
-        if (!$userController->checkIfUserExists($opponentUSername)) {
-            // User does not exist, add an error message to the session:
-            return redirect()->back()->with('error', 'Sorry, that user is not registered. Please select an existing user! ')->withInput();
-        }
-        
-
+    
         // Check if the 'court' value is present
         if (isset($incomingFields['court'])) {
             $court = intval($incomingFields['court']); // Convert the 'court' value to an integer
@@ -46,8 +34,6 @@ class EventController extends Controller
             'time' => $incomingFields['next-time'],
             'court' => $court,
             'opponent' => $incomingFields['opponent'],
-/*             'player3' => $incomingFields['player3'],
-            'player4' => $incomingFields['player4'], */
             'location' => $incomingFields['location'],
         ]);
 

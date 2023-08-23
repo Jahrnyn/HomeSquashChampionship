@@ -59,7 +59,6 @@ public function registration(Request $request) {
 
     // checking username exists or not
     public function checkIfUserExists($username){
-        dd('Check if user exists:', $username);
         $user = User::where('username', $username)->first();
         return !is_null($user);
     }
@@ -72,7 +71,6 @@ public function registration(Request $request) {
 
             return response()->json($users);
         } catch (\Exception $e) {
-            Log::error($e);
 
             return response()->json(['error' => 'An error occurred while searching users.'], 500);
         }
