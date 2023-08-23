@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,8 +14,7 @@ class EventController extends Controller
     public function storeNewEvent(Request $request)
     {
         $incomingFields = $request->validate([
-            'next-date' => 'required',
-            'next-time' => 'required',
+            'datetime' => 'required',
             'court' => 'nullable',
             'opponent' => 'nullable',
             'location' => 'nullable',
@@ -30,9 +30,8 @@ class EventController extends Controller
         $incomingFields['player1'] = Auth::user()->name;
 
         $event = new Event([
-            'date' => $incomingFields['next-date'],
-            'time' => $incomingFields['next-time'],
-            'court' => $court,
+            'datetime' => $incomingFields['datetime'],
+            'court' => intval($incomingFields['court']),
             'opponent' => $incomingFields['opponent'],
             'location' => $incomingFields['location'],
         ]);
@@ -41,4 +40,30 @@ class EventController extends Controller
 
         return redirect('/')->with('success', "New event has been created!");
     }
+
+    // Fetching Events:
+    public function fetchUserEvents(){
+        $events = Event::with(['user', 'opponentUser'])
+            ->where(function ($query) {
+                $query->where('user_id', auth()->user()->id)
+                    ->orWhere('opponent', auth()->user()->username);
+            })
+            ->orderBy('datetime', 'asc') // Order events by date
+            ->get();
+    
+        // Convert datetime strings to Carbon instances
+        $events->transform(function ($event) {
+            $event->datetime = Carbon::parse($event->datetime);
+            return $event;
+        });
+
+        // Organize events by months
+        $eventsByMonth = $events->groupBy(function ($event) {
+            return $event->datetime->format('F'); // Group events by month name
+        });
+    
+        return $eventsByMonth;
+    }
+
+
 }

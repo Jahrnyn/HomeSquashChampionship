@@ -3,12 +3,8 @@
     <form action="/create-event" method="POST" id="new-event-form">
     @csrf
         <div class="form-group">
-            <label for="next-date">Select next Date</label>
-            <input type="date" id="next-date" name="next-date" value="<?php echo date('Y-m-d'); ?>">
-        </div>
-        <div class="form-group">
-            <label for="next-time">Select Time</label>
-            <input type="time" id="next-time" name="next-time" value="<?php echo date('H:i'); ?>">
+            <label for="datetime">Select Date and Time</label>
+            <input type="datetime-local" id="datetime" name="datetime" value="<?php echo date('Y-m-d\TH:i'); ?>">
         </div>
         <div class="form-group">
             <label for="court">Select Court</label>

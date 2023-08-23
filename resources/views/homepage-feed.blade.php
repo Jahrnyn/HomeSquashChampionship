@@ -11,7 +11,7 @@
             @include('components/create-new-event-form')
         </div>
         <div class="content-container" id="center-container">
-            @include('components/events_container')
+            @include('components/events_container', ['events' => $userEvents])
         </div>
         <div class="content-container" id="right-container">
             <div class="loggedin-user-container">

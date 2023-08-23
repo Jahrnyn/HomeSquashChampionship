@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->time('time')->nullable();
+            $table->dateTime('datetime');
             $table->integer('court')->nullable();
             $table->foreignId('user_id');
             $table->text('opponent')->nullable();

@@ -16,7 +16,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [UserController::class, "showCorrectHomepage"]);
+Route::get('/', [HomeController::class, "showCorrectHomepage"]);
 
 // User related routes:
 Route::get('/register', [HomeController::class, "registerpage"]);

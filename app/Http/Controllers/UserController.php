@@ -10,18 +10,9 @@ use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
-
-    // Homepage
-    public function showCorrectHomepage() {
-        if (auth()->check()) {
-            return view('homepage-feed');
-        } else {
-            return view('homepage');
-        };
-    }
     
     // Registration
-public function registration(Request $request) {
+    public function registration(Request $request) {
         $incomingFields = $request->validate([
             'username' => ['required', 'min:4', 'max:20', Rule::unique('users', 'username')],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
@@ -57,6 +48,9 @@ public function registration(Request $request) {
         return redirect('/')->with('success', 'You are succesfully logged out');
     }
 
+
+
+    // Below this out of use for now-----------------------------------------------
     // checking username exists or not
     public function checkIfUserExists($username){
         $user = User::where('username', $username)->first();

@@ -1,59 +1,15 @@
-<section>
-    <article>
-        <div class="month-content">
-            <h2><a href="/monthlyResults/jun2023">Június</a></h2>
-            <div class="final-result">
-                Állás = <b>FLINKI</b> = 3,5-1,5 <br>
-            </div>
-            <p>
-                06.02. Péntek 17:00 3-as EGÁL 5-5 <br>
-                06.05. Hétfő 17:00 3-as FLINKI 6-4 <br>
-                06.07. Szerda 16:00 3-as EGÁL 4-4 <br>
-                06.14. Szerda 18:00 1-es FLINKI 6-3<br>
-                06.19. Hetfő 17:00 3-as FLINKI 6-3 <br>
-                06.22. Csütörtök 17:00 3-as ZOLI 6-4 <br>
-                06.26. Hétfő 17:00 1-es
-            </p>
+<div class="month-content">
+    @foreach ($userEvents as $month => $events)
+        <h2>{{ $month }}</h2>
+        <div class="events-list">
+                @foreach ($events as $event)
+                    @php
+                        $eventDate = new \DateTime($event->date);
+                    @endphp
+                    <div class="event">
+                        {{ $event->datetime->format('m.d. l H:i') }} - Court: {{ $event->court }} - User: {{ $event->user->username }} - Opponent: {{ $event->opponentUser ? $event->opponentUser->username : 'No opponent' }}
+                    </div>
+                @endforeach
         </div>
-    </article>
-    <article>
-        <h2><a href="/monthlyResults/may2023">Május</a></h2>
-        <div class="month-content">
-            <div class="final-result">
-                Eredmény = <b>DÖNTETLEN</b> = 1,5-1,5
-            </div>
-        </div>
-    </article>
-    <article>
-        <h2><a href="/monthlyResults/apr2023">Április</a></h2>
-        <div class="month-content">
-            <div class="final-result">
-                Eredmény = <b>FLINKI</b> = 3,5-2,5
-            </div>
-        </div>
-    </article>
-    <article>
-        <h2><a href="/monthlyResults/mar2023">Március</a></h2>
-        <div class="month-content">
-            <div class="final-result">
-                Eredmény = <b>FLINKI</b> = 4-2 
-            </div>
-        </div>
-    </article>
-    <article>
-        <h2><a href="/monthlyResults/feb2023">Február</a></h2>
-        <div class="month-content">
-            <div class="final-result">
-                Eredmény = <b>DÖNTETLEN</b> = 4-4 
-            </div>
-        </div>
-    </article>
-    <article>
-        <h2><a href="/monthlyResults/jan2023">Január</a></h2>
-        <div class="month-content">
-            <div class="final-result">
-                Eredmény = <b>FLINKI</b> = 7,5-3,5 
-            </div>
-        </div>
-    </article>
-</section>
+    @endforeach
+</div>
